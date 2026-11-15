@@ -1,0 +1,12 @@
+{
+  "name": "parquet-arrow-peek",
+  "displayName": "Parquet & Arrow Peek",
+  "version": "0.1.0",
+  "description": "Deterministic zero-egress local inspection tool for Parquet, Arrow, Feather, CSV, and JSONL.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Inspect the schema and footer statistics of data.parquet",
+    "Check columns and null rates in transactions.csv without loading rows",
+    "Inspect nested fields and record counts in events.arrow"
+  ]
+}

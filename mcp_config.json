@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "parquet-arrow-peek": {
+      "command": "python3",
+      "args": ["-m", "parquet_arrow_peek.server"]
+    }
+  }
+}

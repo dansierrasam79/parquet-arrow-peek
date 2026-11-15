@@ -1,0 +1,31 @@
+{
+  "name": "parquet-arrow-peek",
+  "version": "0.1.0",
+  "description": "Deterministic zero-egress local inspection tool for Parquet, Arrow, CSV, and JSONL.",
+  "contextFileName": "skills/parquet-arrow-peek/SKILL.md",
+  "mcpServers": {
+    "parquet-arrow-peek": {
+      "command": "python3",
+      "args": [
+        "-m",
+        "parquet_arrow_peek.server"
+      ]
+    }
+  },
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "read_file|view_file|Read|read_text_file",
+        "hooks": [
+          {
+            "name": "parquet-arrow-guard",
+            "type": "command",
+            "command": "${extensionPath}/hooks/run_guard.sh",
+            "description": "Blocks direct raw reads of columnar (.parquet, .arrow, .feather) and large tabular files (>50KB).",
+            "timeout": 10000
+          }
+        ]
+      }
+    ]
+  }
+}

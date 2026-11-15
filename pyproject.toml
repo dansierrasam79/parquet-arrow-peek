@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "parquet-arrow-peek"
+version = "0.1.0"
+description = "Deterministic zero-egress local inspection tool for Parquet, Arrow, CSV, and JSONL"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pyarrow>=10.0.0",
+]
+
+[project.scripts]
+parquet-arrow-peek = "parquet_arrow_peek.server:main"
+parquet-arrow-guard = "parquet_arrow_peek.hook_guard:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

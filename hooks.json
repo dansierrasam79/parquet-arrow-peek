@@ -1,0 +1,16 @@
+{
+  "parquet-arrow-guard": {
+    "PreToolUse": [
+      {
+        "matcher": "read_file|view_file|read_text_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "hooks/run_guard.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
